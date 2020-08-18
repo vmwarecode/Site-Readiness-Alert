@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><alertContent>
+    <AlertDefinitions>
+        <AlertDefinition adapterKind="VMWARE" description="datacenter or children have critical alert" disableInBasePolicy="true" id="AlertDefinition-f8468999-9b43-4504-91a8-5cacb3513afb" name="NG_SiteReadiness" resourceKind="Datacenter" subType="19" type="15">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="and" ref="SymptomDefinition-174b6c0c-adbf-4712-aa7d-abca73e0a898"/>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+    </AlertDefinitions>
+    <SymptomDefinitions>
+        <SymptomDefinition adapterKind="VMWARE" disableInBasePolicy="true" id="SymptomDefinition-174b6c0c-adbf-4712-aa7d-abca73e0a898" name="NG_DatacenterCriticalAlertCount" resourceKind="Datacenter">
+            <State severity="info">
+                <Condition key="System Attributes|alert_count_critical" operator="&gt;" thresholdType="static" type="metric" value="0.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+    </SymptomDefinitions>
+</alertContent>
